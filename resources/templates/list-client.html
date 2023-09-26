@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client List</title>
+</head>
+<body>
+    <h1>Client List</h1>
+    <a href="/add-client/">Add Client</a>
+
+    <h2>List of Clients</h2>
+    <ul>
+        <li>
+            <span>Client Name 1</span>
+            <a href="#" onclick="deleteClient(1)">Delete</a>
+        </li>
+        <li>
+            <span>Client Name 2</span>
+            <a href="#" onclick="deleteClient(2)">Delete</a>
+        </li>
+        <!-- Add more clients as needed -->
+    </ul>
+
+    <script>
+        function deleteClient(clientId) {
+            // You can implement the deletion logic here
+            // For example, you can make an AJAX request to delete the client from the server
+            // After deletion, you can remove the corresponding <li> element from the list
+            // Here, we'll just demonstrate removing the <li> element
+            const listItem = document.querySelector(`li[data-client-id="${clientId}"]`);
+            if (listItem) {
+                listItem.remove();
+            }
+        }
+    </script>
+</body>
+</html>
